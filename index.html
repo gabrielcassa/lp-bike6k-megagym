@@ -1,0 +1,1378 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart Bike Magnetic 6K | MegaGym</title>
+<meta name="description" content="Smart Bike Magnetic 6K MegaGym: disco de 6 kg com resistência magnética silenciosa, conexão com Zwift, MyWhoosh e Kinomap e banco Ultra Soft. De R$ 2.431,72 por R$ 1.199 no Pix ou 15x de R$ 88,81 sem juros. Frete grátis para 18 estados.">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,800;1,900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/bike-cut.webp">
+<style>
+:root{
+  --orange:#fc5400;
+  --orange-2:#ff7a33;
+  --orange-deep:#e04a00;
+  --ink:#0a0a0a;
+  --ink-2:#121212;
+  --ink-3:#1a1a1a;
+  --line:rgba(255,255,255,.09);
+  --line-2:rgba(255,255,255,.16);
+  --text:#f4f1ee;
+  --muted:#a29d98;
+  --muted-2:#928c87;
+  --green:#22c55e;
+  --radius:22px;
+  --display:"Barlow Condensed", Impact, sans-serif;
+  --body:"Manrope", system-ui, sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --gutter:clamp(16px,4vw,56px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{background:var(--ink);color:var(--text);font-family:var(--body);font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+::selection{background:var(--orange);color:#000}
+.wrap{width:100%;max-width:1320px;margin:0 auto;padding:0 var(--gutter)}
+.display{font-family:var(--display);font-weight:900;text-transform:uppercase;line-height:.88;letter-spacing:-.01em}
+.o{color:var(--orange)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--orange)}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--orange)}
+.lead{font-size:clamp(16px,1.35vw,19px);color:var(--muted);max-width:56ch}
+section{position:relative}
+
+/* grain + glow cursor */
+.grain{position:fixed;inset:-50%;width:200%;height:200%;pointer-events:none;z-index:90;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain 1s steps(4) infinite}
+@keyframes grain{0%{transform:translate(0,0)}25%{transform:translate(-3%,2%)}50%{transform:translate(2%,-3%)}75%{transform:translate(-2%,-1%)}100%{transform:translate(0,0)}}
+.cursor-glow{position:fixed;left:0;top:0;width:520px;height:520px;border-radius:50%;pointer-events:none;z-index:1;background:radial-gradient(circle,rgba(252,84,0,.13),transparent 62%);transform:translate(-50%,-50%);opacity:0;transition:opacity .4s}
+@media (hover:hover){.cursor-glow{opacity:1}}
+
+/* preloader */
+.loader{position:fixed;inset:0;z-index:200;background:#000;display:grid;place-items:center}
+.loader-in{display:flex;flex-direction:column;align-items:center;gap:22px}
+.loader img{width:min(240px,60vw);opacity:0;transform:translateY(12px)}
+.loader-bar{width:min(240px,60vw);height:2px;background:rgba(255,255,255,.1);overflow:hidden}
+.loader-bar i{display:block;height:100%;width:0;background:var(--orange)}
+.loader-num{font-family:var(--display);font-weight:800;font-size:14px;letter-spacing:.3em;color:var(--muted-2)}
+
+/* top marquee */
+.topbar{background:var(--orange);color:#000;overflow:hidden;white-space:nowrap;font-weight:800;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;position:relative;z-index:60}
+.topbar-track{display:inline-flex;gap:0;animation:marq 32s linear infinite;padding:9px 0}
+.topbar-track span{display:inline-flex;align-items:center;gap:14px;padding:0 22px}
+.topbar-track span::after{content:"✦";font-size:10px}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* header */
+.header{position:sticky;top:0;z-index:50;transition:background .4s,backdrop-filter .4s,border-color .4s;border-bottom:1px solid transparent}
+.header.scrolled{background:rgba(10,10,10,.72);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);border-color:var(--line)}
+.header-in{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+.header-logo img{height:34px;width:auto}
+.header-nav{display:flex;gap:30px;font-size:14px;font-weight:600;color:var(--muted)}
+.header-nav a{transition:color .25s}
+.header-nav a:hover{color:var(--text)}
+@media (max-width:900px){.header-nav{display:none}.header-logo img{height:28px}}
+
+/* buttons */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:20px 34px;border-radius:999px;background:var(--orange);color:#000;font-weight:800;font-size:15px;letter-spacing:.06em;text-transform:uppercase;overflow:hidden;isolation:isolate;transition:transform .35s var(--ease),box-shadow .35s;box-shadow:0 10px 40px -10px rgba(252,84,0,.7),inset 0 -3px 0 rgba(0,0,0,.18);will-change:transform;min-height:56px}
+.btn::before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%);transform:translateX(-120%);animation:shine 3.4s var(--ease) infinite;z-index:-1}
+@keyframes shine{0%,55%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+.btn:hover{box-shadow:0 18px 60px -10px rgba(252,84,0,.95),inset 0 -3px 0 rgba(0,0,0,.18)}
+.btn svg{width:18px;height:18px;transition:transform .35s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
+.btn-sm{padding:12px 22px;font-size:12.5px;min-height:44px}
+.btn-ghost{background:transparent;color:var(--text);border:1px solid var(--line-2);box-shadow:none}
+.btn-ghost::before{display:none}
+.btn-ghost:hover{border-color:var(--orange);box-shadow:none;color:var(--orange)}
+.btn-block{width:100%}
+
+/* hero */
+.hero{min-height:calc(100svh - 108px);display:flex;align-items:center;padding:24px 0 60px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+.hero-bg::before{content:"";position:absolute;right:-10%;top:-20%;width:80vw;height:80vw;max-width:1100px;max-height:1100px;border-radius:50%;background:radial-gradient(circle,rgba(252,84,0,.28),rgba(252,84,0,.05) 45%,transparent 65%)}
+.hero-bg::after{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse at 70% 50%,#000 10%,transparent 65%);-webkit-mask-image:radial-gradient(ellipse at 70% 50%,#000 10%,transparent 65%);opacity:.5}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(42px,min(4.9vw,8.2vh),86px);margin:16px 0 20px}
+.hero h1 .line{display:block;overflow:hidden;padding-bottom:.04em}
+.hero h1 .line>span{display:inline-block;will-change:transform}
+.hero h1 em{font-style:italic;color:var(--orange)}
+.hero .lead{margin-bottom:26px}
+.price-tag{display:flex;align-items:flex-end;gap:22px;flex-wrap:wrap;margin-bottom:26px}
+.price-old{font-size:15px;color:var(--muted-2);text-decoration:line-through;font-weight:600}
+.price-now{font-family:var(--display);font-weight:900;font-size:clamp(52px,5vw,74px);line-height:.85;letter-spacing:-.01em}
+.price-now small{font-size:.42em;vertical-align:top;margin-right:4px;color:var(--muted)}
+.price-meta{font-size:14px;color:var(--muted);line-height:1.45}
+.price-meta b{color:var(--text)}
+.pix{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:rgba(34,197,94,.12);color:var(--green);font-weight:800;font-size:12px;letter-spacing:.04em;margin-top:6px}
+.off-badge{position:relative;display:inline-grid;place-items:center;width:76px;height:76px;border-radius:50%;background:var(--orange);color:#000;font-family:var(--display);font-weight:900;font-size:26px;line-height:.9;text-align:center;transform:rotate(-12deg)}
+.off-badge small{display:block;font-size:12px;letter-spacing:.1em}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.trust-row{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:30px;font-size:13px;color:var(--muted);font-weight:600}
+.trust-row span{display:inline-flex;align-items:center;gap:8px}
+.trust-row svg{width:18px;height:18px;color:var(--orange);flex:none}
+
+.hero-visual{position:relative;aspect-ratio:1/1.1;display:grid;place-items:center;perspective:1200px}
+.ring{position:absolute;width:92%;aspect-ratio:1;left:50%;top:50%;transform:translate(-50%,-50%)}
+.ring svg{width:100%;height:100%;overflow:visible}
+.ring-spin{transform-origin:50% 50%}
+.hero-bike{position:relative;z-index:3;width:86%;filter:drop-shadow(0 50px 60px rgba(0,0,0,.75)) drop-shadow(0 0 80px rgba(252,84,0,.15));will-change:transform}
+.hero-floor{position:absolute;bottom:6%;left:50%;width:70%;height:40px;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(252,84,0,.45),transparent 70%);filter:blur(14px);z-index:2}
+.fg-badge{position:absolute;z-index:5;width:var(--fg,150px);aspect-ratio:1;border-radius:50%;background:var(--orange);color:#000;display:grid;place-items:center;box-shadow:0 20px 40px -14px rgba(0,0,0,.8),inset 0 0 0 4px rgba(0,0,0,.12)}
+.fg-ring{position:absolute;inset:0;width:100%;height:100%;animation:fgspin 14s linear infinite}
+.fg-ring text{font-family:var(--display);font-weight:800;font-size:17px;letter-spacing:.06em;fill:#000}
+.fg-core{display:flex;flex-direction:column;align-items:center;justify-content:center;width:52%;aspect-ratio:1;border-radius:50%;background:#000;color:var(--orange)}
+.fg-core svg{width:44%;height:auto}
+.fg-core b{font-family:var(--display);font-weight:900;font-size:calc(var(--fg,150px)*.11);line-height:1;letter-spacing:.04em;margin-top:2px}
+@keyframes fgspin{to{transform:rotate(360deg)}}
+.fg-hero{left:0;bottom:4%;--fg:clamp(118px,11vw,160px);transform:rotate(-10deg)}
+.fg-card{left:0;top:4%;transform:rotate(-10deg);--fg:clamp(104px,9vw,136px)}
+@media (max-width:1000px){.fg-hero{left:2%;bottom:2%;--fg:104px}}
+@media (prefers-reduced-motion:reduce){.fg-ring{animation:none}}
+.chip{position:absolute;z-index:4;display:flex;align-items:center;gap:10px;padding:10px 16px 10px 10px;border-radius:999px;background:rgba(20,20,20,.72);border:1px solid var(--line-2);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);font-size:13px;font-weight:700;white-space:nowrap;box-shadow:0 20px 40px -20px #000}
+.chip i{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--orange);color:#000;font-style:normal;font-family:var(--display);font-weight:900;font-size:13px}
+.chip i svg{width:18px;height:18px}
+.chip small{display:block;font-size:11px;color:var(--muted);font-weight:600}
+.chip-1{left:-2%;top:22%}
+.chip-2{right:-2%;top:12%}
+.chip-3{right:2%;bottom:20%}
+.chip-4{left:4%;bottom:12%}
+@media (max-width:1000px){
+  .hero{padding-top:20px}
+  .hero-grid{grid-template-columns:1fr;gap:10px}
+  .hero-visual{order:-1;width:100%;max-width:min(520px,82vw);margin:0 auto;aspect-ratio:1/1}
+  .chip{font-size:11.5px;padding:7px 12px 7px 7px}
+  .chip i{width:28px;height:28px;font-size:11px}
+  .chip small{display:none}
+  .chip-1{left:0;top:18%}.chip-2{right:0;top:6%}.chip-3{right:0;bottom:16%}.chip-4{display:none}
+}
+
+/* giant scroller */
+.giant{padding:30px 0;border-block:1px solid var(--line);overflow:hidden;white-space:nowrap;background:var(--ink-2)}
+.giant-track{display:inline-flex;will-change:transform}
+.giant-track span{font-family:var(--display);font-weight:900;font-style:italic;text-transform:uppercase;font-size:clamp(60px,11vw,180px);line-height:.9;padding-right:.35em;display:inline-flex;align-items:center;gap:.35em}
+.giant-track span:nth-child(odd){-webkit-text-stroke:1.5px rgba(255,255,255,.35);color:transparent}
+.giant-track span b{display:inline-block;width:.32em;height:.32em;border-radius:50%;background:var(--orange)}
+
+/* stats */
+.stats{padding:clamp(70px,9vw,120px) 0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.stat{padding:clamp(24px,3vw,44px);border-right:1px solid var(--line);position:relative}
+.stat:last-child{border-right:0}
+.stat-num{font-family:var(--display);font-weight:900;font-size:clamp(54px,6vw,96px);line-height:.85;letter-spacing:-.02em}
+.stat-num sup{font-size:.4em;color:var(--orange);vertical-align:top;margin-left:4px}
+.stat p{margin-top:14px;font-size:14px;color:var(--muted);max-width:22ch}
+@media (max-width:860px){.stats-grid{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+
+/* pain */
+.pain{padding:clamp(80px,10vw,150px) 0}
+.pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px);align-items:center}
+.pain h2{font-size:clamp(44px,5.4vw,88px);margin:18px 0 24px}
+.excuses{display:flex;flex-direction:column;gap:12px;margin-top:30px}
+.excuse{display:flex;align-items:center;gap:16px;padding:18px 22px;border-radius:16px;border:1px solid var(--line);background:linear-gradient(90deg,rgba(255,255,255,.03),transparent);font-weight:600}
+.excuse s{color:var(--muted-2);text-decoration-color:var(--orange);text-decoration-thickness:2px;flex:1}
+.excuse .x{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:rgba(252,84,0,.15);color:var(--orange);font-weight:900;font-size:14px}
+.pain-media{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:3/4}
+.pain-media img{width:100%;height:120%;object-fit:cover;position:absolute;top:-10%}
+.pain-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.85))}
+.pain-media .cap{position:absolute;left:24px;right:24px;bottom:22px;z-index:2;font-family:var(--display);font-weight:800;font-size:clamp(26px,2.6vw,38px);text-transform:uppercase;line-height:.95}
+@media (max-width:900px){.pain-grid{grid-template-columns:1fr}.pain-media{aspect-ratio:4/5}}
+
+/* features sticky */
+.features{padding:clamp(60px,8vw,120px) 0}
+.sec-head{max-width:860px;margin-bottom:clamp(40px,6vw,80px)}
+.sec-head h2{font-size:clamp(44px,5.6vw,92px);margin:18px 0 20px}
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px)}
+.feat-sticky{position:sticky;top:110px;height:calc(100vh - 150px);max-height:760px}
+.feat-frame{position:relative;height:100%;border-radius:28px;overflow:hidden;background:#111;border:1px solid var(--line)}
+.feat-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.08);transition:opacity .7s var(--ease),transform 1.2s var(--ease)}
+.feat-frame img.on{opacity:1;transform:scale(1)}
+.feat-progress{position:absolute;left:20px;right:20px;bottom:20px;z-index:3;display:flex;gap:6px}
+.feat-progress i{flex:1;height:3px;border-radius:3px;background:rgba(0,0,0,.18);overflow:hidden}
+.feat-progress i::after{content:"";display:block;height:100%;width:0;background:var(--orange);transition:width .6s var(--ease)}
+.feat-progress i.on::after{width:100%}
+.feat-list{display:flex;flex-direction:column}
+.feat{min-height:72vh;display:flex;flex-direction:column;justify-content:center;padding:40px 0;opacity:.28;transition:opacity .6s var(--ease)}
+.feat.on{opacity:1}
+.feat-n{font-family:var(--display);font-weight:800;font-size:16px;letter-spacing:.2em;color:var(--orange)}
+.feat h3{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(40px,4.2vw,68px);line-height:.9;margin:12px 0 18px}
+.feat p{color:var(--muted);font-size:17px;max-width:46ch}
+.feat ul{list-style:none;margin-top:20px;display:flex;flex-wrap:wrap;gap:8px}
+.feat li{padding:7px 14px;border-radius:999px;border:1px solid var(--line-2);font-size:13px;font-weight:700}
+.feat-img-m{display:none}
+@media (max-width:900px){
+  .feat-grid{grid-template-columns:1fr}
+  .feat-sticky{display:none}
+  .feat{min-height:auto;opacity:1;padding:26px 0;border-top:1px solid var(--line)}
+  .feat-img-m{display:block;border-radius:20px;overflow:hidden;margin-bottom:22px;aspect-ratio:4/4.4;background:#fff}
+  .feat-img-m img{width:100%;height:100%;object-fit:cover}
+}
+
+/* horizontal world */
+.world{background:var(--ink-2);border-block:1px solid var(--line);overflow:hidden}
+.world-pin{height:100vh;display:flex;flex-direction:column;justify-content:center;padding:90px 0 40px}
+.world-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:34px}
+.world-head h2{font-size:clamp(44px,5.6vw,92px);margin-top:16px}
+.world-head .lead{max-width:40ch}
+.world-track{display:flex;gap:22px;padding:0 var(--gutter);will-change:transform;width:max-content}
+.w-card{position:relative;flex:none;width:clamp(280px,30vw,430px);aspect-ratio:3/4;border-radius:24px;overflow:hidden;border:1px solid var(--line)}
+.w-card img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.w-card:hover img{transform:scale(1.05)}
+.w-text{flex:none;width:clamp(280px,28vw,400px);aspect-ratio:3/4;border-radius:24px;padding:34px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(160deg,#1f1f1f,#0d0d0d);border:1px solid var(--line)}
+.w-text.hot{background:linear-gradient(160deg,var(--orange),var(--orange-deep));color:#000;border:0}
+.w-text h3{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(36px,3.2vw,52px);line-height:.9}
+.w-text p{font-size:15px;color:var(--muted)}
+.w-text.hot p{color:rgba(0,0,0,.75)}
+.apps{display:flex;flex-wrap:wrap;gap:8px}
+.apps span{padding:9px 16px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid var(--line-2);font-weight:800;font-size:14px}
+.w-text.hot .apps span{background:rgba(0,0,0,.12);border-color:rgba(0,0,0,.2)}
+.world-note{margin-top:26px;font-size:12px;color:var(--muted-2)}
+@media (min-width:901px){.w-card,.w-text{width:auto;height:min(58vh,560px)}}
+@media (max-width:900px){
+  .world-pin{height:auto;padding:80px 0 60px}
+  .world-head{flex-direction:column;align-items:flex-start}
+  .world-scroll{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .world-scroll::-webkit-scrollbar{display:none}
+  .world-track>*{scroll-snap-align:center;width:78vw}
+}
+
+/* magnetic compare */
+.compare{padding:clamp(80px,10vw,150px) 0}
+.compare-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(30px,6vw,90px);align-items:center}
+.compare h2{font-size:clamp(44px,5.4vw,88px);margin:18px 0 22px}
+.equation{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:34px}
+.eq-box{padding:20px 24px;border-radius:18px;border:1px solid var(--line-2);background:var(--ink-3)}
+.eq-box b{display:block;font-family:var(--display);font-weight:900;font-size:clamp(40px,4vw,60px);line-height:.9}
+.eq-box span{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.eq-box.hot{background:var(--orange);color:#000;border:0}
+.eq-box.hot span{color:rgba(0,0,0,.7)}
+.eq-sign{font-family:var(--display);font-weight:900;font-size:44px;color:var(--orange)}
+.bars{display:flex;flex-direction:column;gap:18px;padding:clamp(24px,3vw,40px);border-radius:28px;border:1px solid var(--line);background:linear-gradient(160deg,#161616,#0c0c0c)}
+.bars-h{display:flex;justify-content:space-between;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.bar-row{display:grid;grid-template-columns:72px 1fr;gap:16px;align-items:center}
+.bar-row>b{font-family:var(--display);font-weight:900;font-size:26px}
+.bar-track{position:relative;height:46px;border-radius:12px;background:rgba(255,255,255,.04);overflow:hidden}
+.bar-fill{position:absolute;inset:0 auto 0 0;width:0;border-radius:12px;background:linear-gradient(90deg,#333,#555);display:flex;align-items:center;justify-content:flex-end;padding-right:14px;font-weight:800;font-size:14px;white-space:nowrap}
+.bar-row.me .bar-fill{background:linear-gradient(90deg,var(--orange-deep),var(--orange));color:#000}
+.bar-row.me>b{color:var(--orange)}
+.bars small{font-size:12px;color:var(--muted-2)}
+@media (max-width:900px){.compare-grid{grid-template-columns:1fr}}
+
+/* audience */
+.audience{padding:clamp(70px,9vw,130px) 0;background:var(--ink-2);border-block:1px solid var(--line)}
+.aud-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.aud{position:relative;padding:30px 26px 28px;border-radius:24px;border:1px solid var(--line);background:var(--ink);overflow:hidden;transition:border-color .4s,transform .5s var(--ease);min-height:290px;display:flex;flex-direction:column}
+.aud::before{content:"";position:absolute;inset:auto -30% -60% -30%;height:80%;background:radial-gradient(circle,rgba(252,84,0,.35),transparent 60%);opacity:0;transition:opacity .5s}
+.aud:hover{border-color:rgba(252,84,0,.6);transform:translateY(-6px)}
+.aud:hover::before{opacity:1}
+.aud{display:grid!important;grid-template-columns:auto 1fr;grid-template-rows:auto 1fr;column-gap:14px;align-content:start}
+.aud-ic{color:var(--orange);align-self:center;position:relative}
+.aud-ic svg{width:30px;height:30px;display:block}
+.aud h3{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:28px;line-height:.95;margin:0;align-self:center;position:relative}
+.aud{min-height:0!important}
+.aud p{grid-column:1 / -1;padding-top:16px}
+.aud p{font-size:14.5px;color:var(--muted);position:relative}
+@media (max-width:1000px){.aud-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.aud-grid{grid-template-columns:1fr}.aud{min-height:auto}}
+
+/* lifestyle gallery */
+.life{padding:clamp(80px,10vw,150px) 0}
+.life-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;grid-template-rows:auto auto;gap:16px}
+.life-item{position:relative;border-radius:24px;overflow:hidden;clip-path:inset(12% 12% 12% 12% round 24px)}
+.life-item img{width:100%;height:100%;object-fit:cover;transform:scale(1.25)}
+.life-item.big{grid-row:span 2;aspect-ratio:auto}
+.life-item:not(.big){aspect-ratio:3/4}
+.life-quote{grid-column:2 / span 2;display:flex;align-items:center;padding:clamp(24px,3vw,44px);border-radius:24px;background:var(--orange);color:#000}
+.life-quote p{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(30px,3.2vw,52px);line-height:.92}
+@media (max-width:900px){
+  .life-grid{grid-template-columns:1fr 1fr}
+  .life-item.big{grid-column:span 2;grid-row:auto;aspect-ratio:4/5}
+  .life-quote{grid-column:span 2}
+}
+
+/* calculator */
+.calc{padding:clamp(80px,10vw,150px) 0;overflow:hidden}
+.calc-box{position:relative;display:grid;grid-template-columns:1fr 1fr;border-radius:32px;border:1px solid var(--line);background:linear-gradient(150deg,#171717,#0b0b0b);overflow:hidden}
+.calc-box::before{content:"";position:absolute;right:-20%;bottom:-40%;width:70%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(252,84,0,.22),transparent 65%)}
+.calc-l,.calc-r{position:relative;padding:clamp(28px,4.5vw,64px)}
+.calc-l{border-right:1px solid var(--line)}
+.calc h2{font-size:clamp(40px,4.4vw,72px);margin:16px 0 18px}
+.field{margin-top:34px}
+.field-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px;font-weight:700;font-size:14px;color:var(--muted)}
+.field-top output{font-family:var(--display);font-weight:900;font-size:34px;color:var(--text)}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:6px;background:linear-gradient(90deg,var(--orange) var(--p,30%),rgba(255,255,255,.1) var(--p,30%));outline:none;cursor:pointer}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;border-radius:50%;background:#fff;border:6px solid var(--orange);box-shadow:0 0 0 6px rgba(252,84,0,.2);transition:transform .2s}
+input[type=range]::-webkit-slider-thumb:active{transform:scale(1.15)}
+input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:#fff;border:6px solid var(--orange)}
+.calc-r{display:flex;flex-direction:column;justify-content:center;gap:24px}
+.res{padding-bottom:22px;border-bottom:1px solid var(--line)}
+.res:last-of-type{border:0}
+.res span{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.res b{display:block;font-family:var(--display);font-weight:900;font-size:clamp(46px,5vw,80px);line-height:.95;margin-top:6px}
+.res b.o{color:var(--orange)}
+.calc-note{font-size:12px;color:var(--muted-2)}
+@media (max-width:900px){.calc-box{grid-template-columns:1fr}.calc-l{border-right:0;border-bottom:1px solid var(--line)}}
+
+/* specs */
+.specs{padding:clamp(70px,9vw,130px) 0}
+.specs-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,80px);align-items:start}
+.specs-img{border-radius:28px;background:radial-gradient(circle at 50% 60%,rgba(252,84,0,.22),transparent 60%),linear-gradient(160deg,#181818,#0b0b0b);border:1px solid var(--line);overflow:hidden;position:sticky;top:110px;padding:clamp(24px,4vw,56px)}
+.specs-img img{filter:drop-shadow(0 40px 50px rgba(0,0,0,.7))}
+.spec-table{border-top:1px solid var(--line)}
+.spec-row{display:flex;justify-content:space-between;gap:20px;padding:18px 0;border-bottom:1px solid var(--line);font-size:15px}
+.spec-row span{color:var(--muted)}
+.spec-row b{text-align:right;font-weight:700}
+@media (max-width:900px){.specs-grid{grid-template-columns:1fr}.specs-img{position:relative;top:0}}
+
+/* offer */
+.offer{padding:clamp(80px,10vw,150px) 0;background:radial-gradient(ellipse at 50% 0%,rgba(252,84,0,.18),transparent 60%),var(--ink)}
+.offer .sec-head{text-align:center;margin-inline:auto}
+.offer .sec-head .eyebrow{justify-content:center}
+.offer .sec-head .lead{margin-inline:auto}
+.offer-grid{display:grid;grid-template-columns:1fr;max-width:1080px;margin:0 auto}
+.card{position:relative;border-radius:32px;border:1px solid var(--line-2);background:linear-gradient(160deg,#1a1a1a,#0c0c0c);padding:clamp(24px,3.5vw,48px);display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;overflow:hidden}
+.card.main{border:1.5px solid var(--orange);box-shadow:0 30px 120px -40px rgba(252,84,0,.6)}
+.card.alt{grid-template-columns:1fr}
+.card-flag{position:absolute;top:22px;left:22px;padding:7px 14px;border-radius:999px;background:var(--orange);color:#000;font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;z-index:2}
+.card.alt .card-flag{background:#fff}
+.card-img{position:relative}
+.card-img img{width:100%;filter:drop-shadow(0 30px 40px rgba(0,0,0,.7))}
+.card.alt .card-img{max-width:260px;margin:30px auto 0}
+.card h3{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(30px,2.8vw,44px);line-height:.92;margin-bottom:16px}
+.card .from{font-size:14px;color:var(--muted)}
+.card .from s{color:var(--muted-2)}
+.card .big{font-family:var(--display);font-weight:900;font-size:clamp(56px,5.2vw,84px);line-height:.85;margin:6px 0 8px}
+.card .big small{font-size:.38em;color:var(--muted);vertical-align:top}
+.card .inst{font-size:15px;color:var(--muted);margin-bottom:6px}
+.card .inst b{color:var(--text)}
+.card ul{list-style:none;margin:22px 0 26px;display:flex;flex-direction:column;gap:10px;font-size:14.5px}
+.card li{display:flex;gap:10px;align-items:flex-start}
+.card li svg{flex:none;width:18px;height:18px;color:var(--orange);margin-top:3px}
+.volt{display:flex;gap:8px;margin:16px 0 4px}
+.volt button{flex:1;padding:12px;border-radius:12px;border:1px solid var(--line-2);font-weight:800;font-size:14px;transition:all .25s;min-height:44px}
+.volt button.on{border-color:var(--orange);background:rgba(252,84,0,.12);color:var(--orange)}
+.save-pill{display:inline-block;padding:5px 12px;border-radius:999px;background:rgba(34,197,94,.12);color:var(--green);font-weight:800;font-size:12.5px;margin-top:4px}
+.stock{display:flex;align-items:center;gap:10px;margin-top:16px;font-size:13px;font-weight:700;color:var(--muted)}
+.stock i{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:pulse 1.8s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+@media (max-width:1000px){.offer-grid{grid-template-columns:1fr}.card{grid-template-columns:1fr}.card.main .card-img{max-width:360px;margin:30px auto 0}}
+
+/* frete */
+.ship{margin-top:20px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;padding:24px clamp(20px,3vw,36px);border-radius:24px;border:1px solid var(--line);background:var(--ink-2)}
+.ship-l{display:flex;align-items:center;gap:16px}
+.ship-l svg{width:40px;height:40px;color:var(--orange);flex:none}
+.ship-l b{display:block;font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:24px;line-height:1}
+.ship-l span{font-size:13px;color:var(--muted)}
+.ship-r{display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.ship select{appearance:none;-webkit-appearance:none;padding:14px 44px 14px 18px;border-radius:12px;border:1px solid var(--line-2);background:#0e0e0e url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%23fc5400' stroke-width='2'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E") no-repeat right 16px center;color:var(--text);font:inherit;font-weight:700;font-size:16px;min-height:48px;cursor:pointer}
+.ship-res{font-weight:700;font-size:15px;min-height:24px}
+.ship-res.ok{color:var(--green)}
+.ship-res.no{color:var(--muted)}
+@media (max-width:760px){.ship{grid-template-columns:1fr}.ship-r{justify-content:flex-start}}
+
+/* guarantees */
+.guar{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px}
+.g{padding:22px;border-radius:20px;border:1px solid var(--line);display:flex;gap:14px;align-items:flex-start}
+.g svg{width:28px;height:28px;color:var(--orange);flex:none}
+.g b{display:block;font-size:15px;margin-bottom:2px}
+.g span{font-size:13px;color:var(--muted);line-height:1.45}
+@media (max-width:1000px){.guar{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.guar{grid-template-columns:1fr}}
+
+/* faq */
+.faq{padding:clamp(80px,10vw,140px) 0}
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,6vw,90px)}
+.faq h2{font-size:clamp(44px,5vw,80px);margin-top:16px}
+.qa{border-bottom:1px solid var(--line)}
+.qa button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0;text-align:left;font-weight:700;font-size:clamp(16px,1.3vw,19px);min-height:44px}
+.qa button i{flex:none;position:relative;width:32px;height:32px;border-radius:50%;border:1px solid var(--line-2);transition:all .35s var(--ease)}
+.qa button i::before,.qa button i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:2px;background:currentColor;transform:translate(-50%,-50%);transition:transform .35s var(--ease)}
+.qa button i::after{transform:translate(-50%,-50%) rotate(90deg)}
+.qa.open button i{background:var(--orange);border-color:var(--orange);color:#000}
+.qa.open button i::after{transform:translate(-50%,-50%) rotate(0)}
+.qa-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--ease)}
+.qa.open .qa-body{grid-template-rows:1fr}
+.qa-body>div{overflow:hidden}
+.qa-body p{padding-bottom:24px;color:var(--muted);max-width:62ch}
+@media (max-width:900px){.faq-grid{grid-template-columns:1fr}}
+
+/* final */
+.final{position:relative;padding:clamp(100px,12vw,180px) 0;overflow:hidden;text-align:center}
+.final-bg{position:absolute;inset:0;background:radial-gradient(circle at 50% 60%,rgba(252,84,0,.35),transparent 55%)}
+.final h2{position:relative;font-size:clamp(56px,9vw,150px)}
+.final .lead{position:relative;margin:24px auto 40px}
+.final-bike{position:relative;width:min(420px,70vw);margin:0 auto 30px}
+.final .btn{position:relative}
+
+/* footer */
+.footer{border-top:1px solid var(--line);padding:50px 0 120px;font-size:13px;color:var(--muted-2)}
+.footer-in{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.footer img{height:30px;width:auto}
+
+/* sticky mobile cta */
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:70;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(10,10,10,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:14px;transform:translateY(110%);transition:transform .5s var(--ease)}
+.sticky-cta.show{transform:none}
+.sticky-cta .p b{display:block;font-family:var(--display);font-weight:900;font-size:26px;line-height:1}
+.sticky-cta .p span{font-size:11.5px;color:var(--muted)}
+.sticky-cta .btn{padding:14px 22px;font-size:13px;flex:none}
+@media (min-width:901px){.sticky-cta{left:auto;right:24px;bottom:24px;border-radius:999px;border:1px solid var(--line-2);padding:10px 10px 10px 26px;gap:22px}}
+
+/* section transitions */
+.progress{position:fixed;left:0;top:0;height:3px;width:100%;z-index:80;background:var(--orange);transform-origin:0 50%;transform:scaleX(0);box-shadow:0 0 14px rgba(252,84,0,.8)}
+body{background:#000}
+.sx{position:relative;will-change:clip-path;background-color:var(--ink);background-image:radial-gradient(ellipse 70% 320px at 50% 0%,rgba(252,84,0,.10),transparent 70%)}
+.sx.audience{background-color:var(--ink-2)}
+.hero,.giant,.stats{background-color:var(--ink)}
+.sx-shade{position:absolute;inset:0;background:#000;opacity:0;pointer-events:none;z-index:6}
+.sx-line{position:absolute;left:var(--gutter);right:var(--gutter);top:0;height:1px;background:linear-gradient(90deg,transparent,var(--orange),transparent);transform:scaleX(0);z-index:7;pointer-events:none}
+.sx-tag{position:absolute;top:22px;right:var(--gutter);z-index:7;font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.3em;color:var(--muted-2);pointer-events:none}
+.sx-tag b{color:var(--orange);font-weight:800}
+.wd{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.06em;margin-bottom:-.06em}
+.wd>i{display:inline-block;font-style:inherit;will-change:transform}
+.wipe{position:fixed;inset:0;z-index:150;pointer-events:none;display:grid;grid-template-columns:repeat(5,1fr)}
+.wipe i{background:var(--orange);transform:scaleY(0);transform-origin:50% 100%}
+@media (max-width:900px){.sx-tag{display:none}}
+
+/* ignition sequence */
+.ignite{position:relative;height:100vh;height:100svh;background:#000;overflow:hidden}
+.ig-stage{position:absolute;inset:0;display:grid;place-items:center;overflow:hidden}
+.ig-stage>*{grid-area:1/1}
+.ig-word{font-family:var(--display);font-weight:900;font-style:italic;font-size:clamp(110px,26vw,420px);line-height:.8;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.18);white-space:nowrap;letter-spacing:.02em;opacity:0}
+.ig-lines{position:relative;width:0;height:0}
+.ig-lines i{position:absolute;left:0;top:0;width:2px;height:55vmax;margin-left:-1px;transform-origin:50% 0;background:linear-gradient(180deg,transparent 0 22%,rgba(252,84,0,.0) 22%,rgba(252,84,0,.9) 60%,transparent);opacity:0}
+.ig-lines i:nth-child(3n){background:linear-gradient(180deg,transparent 0 30%,rgba(255,255,255,.7) 65%,transparent);width:1px}
+.ig-rings{width:min(64vmin,600px);height:min(64vmin,600px);overflow:visible;margin-top:-6vh}
+.ig-r{transform-origin:300px 300px}
+.ig-glow{margin-top:-6vh;width:50vmin;height:50vmin;border-radius:50%;background:radial-gradient(circle,rgba(252,84,0,.5),rgba(252,84,0,.15) 45%,transparent 68%);opacity:0}
+.ig-bike{margin-top:-6vh;width:min(42vmin,420px);filter:drop-shadow(0 40px 60px rgba(0,0,0,.9));will-change:transform;opacity:0}
+.ig-cap{align-self:end;margin-bottom:5vh;position:relative;z-index:2;padding:12px 22px;border-radius:999px;background:rgba(0,0,0,.72);border:1px solid var(--line);display:flex;gap:clamp(14px,3vw,40px);font-family:var(--display);font-weight:800;font-size:clamp(14px,1.6vw,22px);letter-spacing:.3em;color:var(--muted)}
+.ig-cap span{opacity:0}
+.ig-cap span::before{content:"◆ ";color:var(--orange)}
+.ig-flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;mix-blend-mode:overlay}
+.ig-flood{position:absolute;inset:0;background:var(--orange);clip-path:circle(0% at 59% 58%);display:grid;place-items:center;color:#000;text-align:center;padding:0 16px}
+.ig-flood::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(115deg,rgba(0,0,0,.07) 0 2px,transparent 2px 22px)}
+.ig-final{position:relative}
+.ig-final small{display:block;font-weight:800;letter-spacing:.3em;text-transform:uppercase;font-size:clamp(11px,1.1vw,14px);margin-bottom:10px}
+.ig-big{display:block;font-family:var(--display);font-weight:900;font-style:italic;font-size:clamp(96px,21vw,340px);line-height:.82;letter-spacing:-.02em;white-space:nowrap}
+.ig-big span{display:inline-block}
+.ig-final p{font-size:clamp(15px,1.5vw,20px);font-weight:600;margin-top:18px}
+.ig-final p strong{font-weight:900}
+.ig-down{margin:26px auto 0;width:52px;height:52px;border-radius:50%;border:2px solid #000;display:grid;place-items:center;font-weight:900;font-size:20px;animation:bob 1.6s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+
+/* price drop */
+.pdrive{position:relative;height:100vh;height:100svh;background:#000;overflow:hidden}
+.pd-wipe{position:absolute;inset:0;background:var(--orange);transform:scaleX(0);transform-origin:0 50%}
+.pd-wipe::after{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(115deg,rgba(0,0,0,.07) 0 2px,transparent 2px 22px)}
+.pd-stage{position:absolute;inset:0;display:grid;place-items:center;overflow:hidden;padding:0 16px}
+.pd-stage>*{grid-area:1/1}
+.pd-old{text-align:center;position:relative;z-index:2}
+.pd-old small{display:block;font-weight:800;letter-spacing:.3em;text-transform:uppercase;font-size:12px;color:var(--muted);margin-bottom:8px}
+.pd-old-n{position:relative;font-family:var(--display);font-weight:900;font-style:italic;font-size:clamp(84px,16vw,270px);line-height:.85;letter-spacing:-.02em;white-space:nowrap;color:var(--text)}
+.pd-old-n span{display:inline-block}
+.pd-strike{position:absolute;left:-4%;right:-4%;top:50%;height:clamp(8px,1vw,16px);background:var(--orange);border-radius:4px;transform:scaleX(0) rotate(-6deg);transform-origin:0 50%}
+.pd-final{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;color:#000}
+.pd-k{font-weight:800;letter-spacing:.3em;text-transform:uppercase;font-size:clamp(11px,1.1vw,14px)}
+.pd-new{display:block;font-family:var(--display);font-weight:900;font-style:italic;font-size:clamp(84px,14vw,230px);line-height:.85;letter-spacing:-.02em;white-space:nowrap;margin-top:8px}
+.pd-new span{display:inline-block}
+.pd-sub{margin-top:14px;font-weight:700;font-size:clamp(14px,1.4vw,19px)}
+.pd-urg{margin-top:22px;display:flex;flex-direction:column;align-items:center;gap:8px;padding:18px 30px;border-radius:22px;background:#000;color:var(--text);box-shadow:0 30px 60px -30px rgba(0,0,0,.7)}
+.pd-ltd{font-family:var(--display);font-weight:900;font-style:italic;text-transform:uppercase;font-size:clamp(26px,3vw,40px);line-height:.95;color:var(--orange)}
+.pd-tlabel{font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.pd-timer{display:flex;align-items:flex-start;gap:10px;font-family:var(--display);font-weight:900}
+.pd-timer>div{display:flex;flex-direction:column;align-items:center;min-width:84px;padding:8px 10px 6px;border-radius:14px;background:#151515;border:1px solid var(--line-2)}
+.pd-timer b{font-size:clamp(48px,5.4vw,76px);line-height:.9;color:var(--orange);font-variant-numeric:tabular-nums}
+.pd-timer small{font-family:var(--body);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.pd-timer i{font-style:normal;font-size:clamp(40px,4vw,60px);line-height:1.1;color:var(--muted-2)}
+.pd-limit{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;margin-top:4px}
+.pd-limit i{width:8px;height:8px;border-radius:50%;background:var(--orange)}
+.pd-cta{margin-top:20px;background:#000;color:#fff;box-shadow:0 14px 40px -12px rgba(0,0,0,.6)}
+.pd-cta:hover{box-shadow:0 20px 50px -12px rgba(0,0,0,.8)}
+.pd-stamp{position:absolute;right:max(5vw,16px);top:12%;width:clamp(96px,13vw,180px);aspect-ratio:1;border-radius:50%;background:#000;color:var(--orange);display:grid;place-content:center;font-family:var(--display);font-weight:900;font-size:clamp(30px,4vw,56px);line-height:.85;text-align:center;border:3px dashed var(--orange);outline:6px solid #000}
+.pd-stamp small{font-size:.45em;letter-spacing:.12em}
+@media (max-width:700px){
+  .pd-stamp{top:7%;right:12px}
+  .pd-urg{padding:14px 18px}
+  .pd-timer>div{min-width:70px}
+}
+/* the page countdown, inline wherever it appears */
+.tmr{font-family:var(--display);font-weight:900;color:var(--orange);letter-spacing:.03em;font-variant-numeric:tabular-nums}
+.tmr b{display:inline!important;font:inherit!important;color:inherit!important;line-height:inherit!important}
+.tm-inline{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:8px 14px;border-radius:999px;background:rgba(252,84,0,.1);border:1px solid rgba(252,84,0,.35);font-size:13.5px;font-weight:700}
+.tm-inline .tmr{font-size:20px}
+.final-tm{position:relative;margin:-14px auto 26px;font-weight:700;color:var(--muted)}
+.final-tm .tmr{font-size:28px;margin-left:6px}
+.sticky-cta .tmr{font-size:13px}
+/* countdown inside the offer card */
+.card-cd{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px;padding:10px 14px;border-radius:12px;background:rgba(252,84,0,.1);border:1px solid rgba(252,84,0,.35);font-size:13.5px;font-weight:700}
+.card-cd .tmr{font-size:22px}
+
+/* reveal helpers */
+.rv{opacity:0;transform:translateY(40px)}
+.no-js .rv{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .rv{opacity:1!important;transform:none!important}
+  .life-item{clip-path:none!important}.life-item img{transform:none!important}
+  .grain{display:none}
+}
+
+/* ===== Smart Bike 6K: ajustes sobre a base da LP 13K (mesmos da LP do Smith) ===== */
+.price-k{display:block;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--green);margin-top:8px}
+.btn:focus-visible,.qa button:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+.tmr small{font-family:var(--body);font-size:.6em;font-weight:800;margin:0 5px 0 1px;color:var(--muted)}
+.pd-timer>div{min-width:76px}
+@media (max-width:700px){.pd-timer{gap:5px}.pd-timer>div{min-width:56px;padding:6px 6px 5px}.pd-timer b{font-size:40px}.pd-timer i{font-size:30px}}
+.ship-r .btn{padding:14px 24px;font-size:13px;min-height:48px}
+.final-bike{filter:drop-shadow(0 40px 50px rgba(0,0,0,.8))}
+.card .inst{margin-bottom:0}
+</style>
+</head>
+<body>
+
+<div class="loader" aria-hidden="true">
+  <div class="loader-in">
+    <img src="assets/logo.png" alt="">
+    <div class="loader-bar"><i></i></div>
+    <div class="loader-num">000</div>
+  </div>
+</div>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor-glow" aria-hidden="true"></div>
+
+<!-- TOPBAR -->
+<div class="topbar" role="note">
+  <div class="topbar-track">
+    <span>Frete grátis para 18 estados*</span><span>1 ano de garantia estendida</span><span>15x sem juros no cartão</span><span>10% off no Pix</span><span>Em estoque</span><span>Chega pré-montada</span>
+    <span>Frete grátis para 18 estados*</span><span>1 ano de garantia estendida</span><span>15x sem juros no cartão</span><span>10% off no Pix</span><span>Em estoque</span><span>Chega pré-montada</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="wrap header-in">
+    <a href="#topo" class="header-logo" aria-label="MegaGym, voltar ao topo"><img src="assets/logo.png" alt="MegaGym" width="800" height="206"></a>
+    <nav class="header-nav" aria-label="Seções">
+      <a href="#tecnologia">Tecnologia</a>
+      <a href="#conectada">Conectada</a>
+      <a href="#economia">Economia</a>
+      <a href="#especificacoes">Especificações</a>
+      <a href="#faq">Dúvidas</a>
+    </nav>
+    <a href="#oferta" class="btn btn-sm magnetic">Comprar agora</a>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow h-fade">Smart Bike Magnetic 6K</span>
+      <h1 class="display">
+        <span class="line"><span>Pedale forte.</span></span>
+        <span class="line"><span><em>Pague leve.</em></span></span>
+        <span class="line"><span>Treine em</span></span>
+        <span class="line"><span>silêncio.</span></span>
+      </h1>
+      <p class="lead h-fade">Disco de 6 kg com resistência magnética, que equivale a 12 a 14 kg de uma bike mecânica. Conexão com Zwift, MyWhoosh e Kinomap, sensor cardíaco e banco Ultra Soft. Spinning de verdade em casa, sem barulho e sem pesar no bolso.</p>
+      <div class="price-tag h-fade">
+        <div>
+          <div class="price-old">De R$ 2.431,72</div>
+          <div class="price-now"><small>R$</small>1.199</div>
+          <span class="price-k">no Pix</span>
+        </div>
+        <div class="price-meta">
+          ou R$ 1.332,22 no cartão<br>
+          em <b>15x de R$ 88,81</b> sem juros<br>
+          <span class="pix">◆ 10% off no Pix já aplicado</span>
+        </div>
+        <div class="off-badge">50%<small>OFF</small></div>
+      </div>
+      <div class="tm-inline h-fade" data-tm style="margin:0 0 22px">Oferta de lançamento termina em <span class="tmr"><b data-u="d">0</b><small>d</small><b data-u="h">00</b>:<b data-u="m">00</b>:<b data-u="s">00</b></span></div>
+      <div class="hero-ctas h-fade">
+        <a href="#oferta" class="btn magnetic">Quero minha Smart Bike
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#tecnologia" class="btn btn-ghost">Ver a tecnologia</a>
+      </div>
+      <div class="trust-row h-fade">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><b style="color:var(--text)">Frete grátis</b>&nbsp;para 18 estados*</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>1 ano de garantia estendida</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 8l-9-5-9 5 9 5 9-5zM3 8v8l9 5 9-5V8"/></svg>Chega pré-montada</span>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="ring" aria-hidden="true">
+        <svg viewBox="0 0 400 400">
+          <defs>
+            <linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fc5400"/><stop offset="1" stop-color="#fc5400" stop-opacity="0"/></linearGradient>
+          </defs>
+          <g class="ring-spin">
+            <circle cx="200" cy="200" r="190" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+            <circle cx="200" cy="200" r="190" fill="none" stroke="url(#rg)" stroke-width="3" stroke-dasharray="300 900" stroke-linecap="round"/>
+            <circle cx="200" cy="200" r="160" fill="none" stroke="rgba(252,84,0,.35)" stroke-width="10" stroke-dasharray="2 14"/>
+          </g>
+          <g class="ring-spin-r">
+            <circle cx="200" cy="200" r="132" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="1" stroke-dasharray="60 20"/>
+          </g>
+        </svg>
+      </div>
+      <div class="hero-floor"></div>
+      <img class="hero-bike" src="assets/bike-cut.webp" alt="Smart Bike Magnetic 6K MegaGym, preta com detalhes laranja" width="1142" height="1470" fetchpriority="high">
+      <div class="chip chip-1"><i>6</i><div>Disco de 6 kg<small>≈ 12 a 14 kg mecânico</small></div></div>
+      <div class="chip chip-2"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7l10 10-5 5V2l5 5L7 17"/></svg></i><div>Bluetooth<small>Zwift · MyWhoosh · Kinomap</small></div></div>
+      <div class="chip chip-3"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M11 5L6 9H2v6h4l5 4zM23 9l-6 6M17 9l6 6"/></svg></i><div>Zero ruído<small>Resistência magnética</small></div></div>
+      <div class="fg-badge fg-hero" role="img" aria-label="Frete grátis para 18 estados"><svg class="fg-ring" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="fgp-fg-hero" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs><text><textPath href="#fgp-fg-hero" textLength="474">FRETE GRÁTIS • 18 ESTADOS • FRETE GRÁTIS • 18 ESTADOS •</textPath></text></svg><div class="fg-core" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><b>GRÁTIS</b></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- GIANT MARQUEE -->
+<div class="giant" aria-hidden="true">
+  <div class="giant-track">
+    <span>Smart Bike<b></b></span><span>Magnetic 6K<b></b></span><span>Smart Bike<b></b></span><span>Magnetic 6K<b></b></span>
+    <span>Smart Bike<b></b></span><span>Magnetic 6K<b></b></span><span>Smart Bike<b></b></span><span>Magnetic 6K<b></b></span>
+  </div>
+</div>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="wrap">
+    <div class="stats-grid rv-group">
+      <div class="stat rv"><div class="stat-num"><span class="count" data-to="6">0</span><sup>KG</sup></div><p>de disco de inércia com resistência magnética. Pedalada firme, sem trancos.</p></div>
+      <div class="stat rv"><div class="stat-num"><span class="count" data-to="160">0</span><sup>KG</sup></div><p>de capacidade. Estrutura em aço reforçado, feita para uso intenso.</p></div>
+      <div class="stat rv"><div class="stat-num"><span class="count" data-to="195">0</span><sup>CM</sup></div><p>de altura máxima. Banco e guidão ajustáveis servem de 1,20 m a 1,95 m.</p></div>
+      <div class="stat rv"><div class="stat-num"><span class="count" data-to="0">0</span><sup>RUÍDO</sup></div><p>Sem contato físico no disco: sem barulho e sem desgaste na resistência.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN -->
+<section class="pain">
+  <div class="wrap pain-grid">
+    <div>
+      <span class="eyebrow rv">Seja sincero</span>
+      <h2 class="display rv">Quantas vezes o treino ficou <span class="o">pra amanhã?</span></h2>
+      <p class="lead rv">Não é falta de vontade. É o trânsito, a chuva, o horário e a fila. A Smart 6K fica a poucos passos da cama e está pronta quando você estiver: às 5h ou às 23h.</p>
+      <div class="excuses">
+        <div class="excuse rv"><i class="x">✕</i><s>“Tá chovendo, hoje não dá.”</s></div>
+        <div class="excuse rv"><i class="x">✕</i><s>“Não tenho tempo de ir até a academia.”</s></div>
+        <div class="excuse rv"><i class="x">✕</i><s>“Bike boa é cara demais.”</s></div>
+        <div class="excuse rv"><i class="x">✕</i><s>“Vou acordar o pessoal de casa.”</s></div>
+        <div class="excuse rv"><i class="x">✕</i><s>“Pedalar sozinho é muito chato.”</s></div>
+      </div>
+    </div>
+    <div class="pain-media rv">
+      <img class="parallax" src="assets/s-casa.webp" alt="Mulher sorrindo sentada na Smart Bike 6K na sala de estar" loading="lazy" width="900" height="1200">
+      <div class="cap">Treinar ficou<br>a <span class="o">poucos passos.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- IGNITION -->
+<section class="ignite" aria-label="Por dentro da Smart Bike 6K">
+  <div class="ig-stage">
+    <div class="ig-lines" aria-hidden="true"></div>
+    <svg class="ig-rings" viewBox="0 0 600 600" aria-hidden="true">
+      <circle class="ig-r ig-r1" cx="300" cy="300" r="280" fill="none" stroke="#fc5400" stroke-width="2"/>
+      <circle class="ig-r ig-r2" cx="300" cy="300" r="240" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1" stroke-dasharray="4 10"/>
+      <circle class="ig-r ig-r3" cx="300" cy="300" r="200" fill="none" stroke="#fc5400" stroke-width="14" stroke-dasharray="2 18" opacity=".7"/>
+      <circle class="ig-r ig-r4" cx="300" cy="300" r="160" fill="none" stroke="rgba(252,84,0,.5)" stroke-width="1"/>
+    </svg>
+    <div class="ig-glow" aria-hidden="true"></div>
+    <img class="ig-bike" src="assets/bike-cut-600.webp" alt="" aria-hidden="true">
+    <div class="ig-cap" aria-hidden="true"><span>6 KG</span><span>MAGNÉTICA</span><span>CONECTADA</span></div>
+    <div class="ig-flash" aria-hidden="true"></div>
+    <div class="ig-flood">
+      <div class="ig-final">
+        <small>Agora, por dentro da máquina</small>
+        <b class="ig-big"><span>6</span> <span>K</span><span>G</span></b>
+        <p>de disco de inércia + resistência magnética. <strong>Carga de 12 a 14 kg de uma bike mecânica, sem o barulho dela.</strong></p>
+        <div class="ig-down" aria-hidden="true">↓</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="tecnologia">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow rv">Feita pra durar</span>
+      <h2 class="display rv">Tudo que você precisa pra <span class="o">não parar.</span></h2>
+      <p class="lead rv">Cada detalhe da 6K foi pensado para o treino de todo dia: carga firme, silêncio, conforto e números na sua frente.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-sticky">
+        <div class="feat-frame">
+          <img class="on" src="assets/s-magnetica.webp" alt="" loading="lazy">
+          <img src="assets/s-silenciosa.webp" alt="" loading="lazy">
+          <img src="assets/s-painel.webp" alt="" loading="lazy">
+          <img src="assets/s-ergonomia.webp" alt="" loading="lazy">
+          <img src="assets/s-ajustes.webp" alt="" loading="lazy">
+          <img src="assets/s-halteres.webp" alt="" loading="lazy">
+          <img src="assets/s-estabilidade.webp" alt="" loading="lazy">
+          <div class="feat-progress"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+      </div>
+      <div class="feat-list">
+        <article class="feat on">
+          <div class="feat-img-m"><img src="assets/s-magnetica.webp" alt="Botão de intensidade com parada de emergência" loading="lazy"></div>
+          <span class="feat-n">01 / 07</span>
+          <h3>Resistência <span class="o">magnética</span> de 6 kg</h3>
+          <p>A carga vem de campos magnéticos, sem peça raspando no disco. O disco de 6 kg entrega uma pedalada firme e contínua, equivalente a 12 a 14 kg de uma bike de atrito. Do aquecimento leve ao sprint, tudo no mesmo botão.</p>
+          <ul><li>Disco de 6 kg</li><li>Ajuste gradual</li><li>Transmissão por correia</li></ul>
+        </article>
+        <article class="feat">
+          <div class="feat-img-m"><img src="assets/s-silenciosa.webp" alt="Mulher pedalando a Smart Bike 6K em silêncio ao lado de um bebê" loading="lazy"></div>
+          <span class="feat-n">02 / 07</span>
+          <h3>Silenciosa <span class="o">de verdade</span></h3>
+          <p>Sem atrito, sem chiado e sem desgaste no sistema de resistência. Dá para treinar cedo, tarde da noite ou com o bebê dormindo no mesmo cômodo. Precisa parar? Pressione o botão para a parada de emergência.</p>
+          <ul><li>Hiper silenciosa</li><li>Zero manutenção</li><li>Parada de emergência</li></ul>
+        </article>
+        <article class="feat">
+          <div class="feat-img-m"><img src="assets/s-painel.webp" alt="Funções do monitor LCD da Smart Bike 6K" loading="lazy"></div>
+          <span class="feat-n">03 / 07</span>
+          <h3>Monitor com <span class="o">pulso cardíaco</span></h3>
+          <p>Tempo, velocidade, distância, calorias, odômetro e batimentos em tempo real, com sensores no guidão. Você enxerga a evolução treino a treino. O monitor funciona com pilhas, sem precisar de tomada perto da bike.</p>
+          <ul><li>Calorias</li><li>Distância e velocidade</li><li>Frequência cardíaca</li></ul>
+        </article>
+        <article class="feat">
+          <div class="feat-img-m"><img src="assets/s-ergonomia.webp" alt="Banco ergonômico, suporte funcional, pedais e guidão multipegadas" loading="lazy"></div>
+          <span class="feat-n">04 / 07</span>
+          <h3>Banco <span class="o">Ultra Soft</span></h3>
+          <p>Desenho anatômico que reduz o impacto e se adapta ao corpo, para você aguentar treinos longos sem aquele incômodo que faz desistir. Guidão emborrachado multipegadas e pedais em alumínio com firma-pé completam o conforto.</p>
+          <ul><li>Design anatômico</li><li>Guidão multipegadas</li><li>Pedal em alumínio</li></ul>
+        </article>
+        <article class="feat">
+          <div class="feat-img-m"><img src="assets/s-ajustes.webp" alt="Ajustes de banco e guidão da Smart Bike 6K, capacidade de 160 kg" loading="lazy"></div>
+          <span class="feat-n">05 / 07</span>
+          <h3>Se ajusta a <span class="o">toda a família</span></h3>
+          <p>Banco e guidão com regulagem de altura para quem tem de 1,20 m a 1,95 m. Cada um treina com a postura certa, e a estrutura em aço reforçado aguenta até 160 kg.</p>
+          <ul><li>1,20 m a 1,95 m</li><li>Até 160 kg</li><li>Ajuste de banco e guidão</li></ul>
+        </article>
+        <article class="feat">
+          <div class="feat-img-m"><img src="assets/s-halteres.webp" alt="Mulher treinando ombros com halteres em cima da Smart Bike 6K" loading="lazy"></div>
+          <span class="feat-n">06 / 07</span>
+          <h3>Cardio + braços <span class="o">no mesmo treino</span></h3>
+          <p>O suporte lateral para dois halteres e o porta-squeeze deixam você trabalhar braços e ombros sem descer da bike. Treino mais completo em menos tempo.</p>
+          <ul><li>Suporte para halteres</li><li>Porta-squeeze</li><li>Treino funcional</li></ul>
+        </article>
+        <article class="feat">
+          <div class="feat-img-m"><img src="assets/s-estabilidade.webp" alt="Mulher pedalando em pé na Smart Bike 6K com estabilidade" loading="lazy"></div>
+          <span class="feat-n">07 / 07</span>
+          <h3>Firme até no <span class="o">treino mais pesado</span></h3>
+          <p>Pés com ajuste de estabilidade para não balançar, mesmo pedalando em pé. Os rodízios frontais ajudam a mudar a bike de lugar, e ela chega pré-montada, com as ferramentas.</p>
+          <ul><li>Pés estabilizadores</li><li>Rodízios frontais</li><li>Pré-montada</li></ul>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORLD (horizontal) -->
+<section class="world" id="conectada">
+  <div class="world-pin">
+    <div class="wrap world-head">
+      <div>
+        <span class="eyebrow rv">Smart de verdade</span>
+        <h2 class="display rv">Pedale nos Alpes <br><span class="o">sem sair da sala.</span></h2>
+      </div>
+      <p class="lead rv">Conecte o celular ou o tablet via Bluetooth, espelhe na Smart TV e escolha entre milhares de percursos reais. Desafios ao vivo com gente do mundo inteiro, do seu tapete.</p>
+    </div>
+    <div class="world-scroll">
+      <div class="world-track">
+        <div class="w-text hot">
+          <h3>Compatível com os maiores apps do mundo</h3>
+          <div class="apps"><span>Zwift</span><span>MyWhoosh</span><span>Kinomap</span></div>
+          <p>Treine sozinho ou em grupo, participe de desafios virtuais e acompanhe seus números em tempo real.</p>
+        </div>
+        <div class="w-card"><img src="assets/s-paisagem.webp" alt="Mulher pedalando a Smart Bike 6K com percurso de montanha na tela" loading="lazy"></div>
+        <div class="w-card"><img src="assets/s-tv.webp" alt="Treino com aula na Smart TV" loading="lazy"></div>
+        <div class="w-text">
+          <h3>Montanhas. <span class="o">Praias.</span> Ruas pelo mundo.</h3>
+          <p>A motivação que falta na bike comum sobra aqui: cenário novo todo dia, metas, ranking e evolução que você vê.</p>
+        </div>
+        <div class="w-card"><img src="assets/s-conectada.webp" alt="Conexão Bluetooth com aplicativos de treino" loading="lazy"></div>
+      </div>
+    </div>
+    <p class="wrap world-note">*Os aplicativos são de terceiros e podem exigir assinatura própria (não inclusa). O ajuste de carga é manual: a resistência não muda automaticamente conforme o percurso do app.</p>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="compare">
+  <div class="wrap compare-grid">
+    <div>
+      <span class="eyebrow rv">Por que magnética?</span>
+      <h2 class="display rv">6 kg que pedalam como <span class="o">13.</span></h2>
+      <p class="lead rv">Na resistência magnética, cada quilo do disco rende muito mais carga do que nas bikes de atrito (com sapata de feltro). Na prática, os 6 kg da Smart 6K equivalem a um disco mecânico de 12 a 14 kg, sem o barulho nem o desgaste dele.</p>
+      <div class="equation rv">
+        <div class="eq-box hot"><b>6 KG</b><span>Magnético</span></div>
+        <div class="eq-sign">≈</div>
+        <div class="eq-box"><b>12–14 KG</b><span>Mecânico</span></div>
+      </div>
+    </div>
+    <div class="bars rv">
+      <div class="bars-h"><span>Disco magnético</span><span>Equivale a (mecânico)</span></div>
+      <div class="bar-row"><b>4 kg</b><div class="bar-track"><div class="bar-fill" data-w="40">9–10 kg</div></div></div>
+      <div class="bar-row me"><b>6 kg</b><div class="bar-track"><div class="bar-fill" data-w="56">12–14 kg · Smart 6K</div></div></div>
+      <div class="bar-row"><b>13 kg</b><div class="bar-track"><div class="bar-fill" data-w="80">18–20 kg</div></div></div>
+      <div class="bar-row"><b>18 kg</b><div class="bar-track"><div class="bar-fill" data-w="100">23–25 kg</div></div></div>
+      <small>Equivalência aproximada entre resistência magnética e resistência por atrito físico.</small>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE -->
+<section class="audience">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow rv">Feita para</span>
+      <h2 class="display rv">Quem quer começar <span class="o">e não parar mais.</span></h2>
+    </div>
+    <div class="aud-grid">
+      <div class="aud rv"><div class="aud-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Rotina corrida</h3><p>Treino de 30 minutos entre uma reunião e outra, sem deslocamento e sem fila.</p></div>
+      <div class="aud rv"><div class="aud-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0112 6a5.5 5.5 0 019.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg></div><h3>Saúde e peso</h3><p>Queima calórica e condicionamento cardiovascular sem impacto nas articulações.</p></div>
+      <div class="aud rv"><div class="aud-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="17" r="4"/><circle cx="18" cy="17" r="4"/><path d="M6 17l4-8h5l3 8M10 9l-1-3H7M15 9l1-3h2"/></svg></div><h3>Quem pedala</h3><p>Rolo indoor com Zwift e MyWhoosh para manter o volume quando a rua não colabora.</p></div>
+      <div class="aud rv"><div class="aud-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6M14 20c0-2.5 1.5-4.5 3.5-4.5S21 17.5 21 20"/></svg></div><h3>Família inteira</h3><p>De 1,20 m a 1,95 m e até 160 kg. Uma bike para todos da casa.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LIFESTYLE -->
+<section class="life">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow rv">No seu espaço</span>
+      <h2 class="display rv">Sua sala. <span class="o">Seu horário.</span> Seu resultado.</h2>
+    </div>
+    <div class="life-grid">
+      <div class="life-item big"><img src="assets/s-treino.webp" alt="Mulher treinando com halteres em cima da Smart Bike 6K na sala" loading="lazy"></div>
+      <div class="life-item"><img src="assets/s-tv.webp" alt="Treino com aula na Smart TV" loading="lazy"></div>
+      <div class="life-item"><img src="assets/s-paisagem.webp" alt="Pedalada virtual com paisagem de montanha" loading="lazy"></div>
+      <div class="life-quote rv"><p>O melhor treino é o que você faz <span style="color:#fff">todo dia.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="calc" id="economia">
+  <div class="wrap">
+    <div class="calc-box rv">
+      <div class="calc-l">
+        <span class="eyebrow">Faça as contas</span>
+        <h2 class="display">Ela se paga. <span class="o">E rápido.</span></h2>
+        <p class="lead">Ajuste com a sua realidade e veja em quanto tempo a Smart 6K custa menos que a academia.</p>
+        <div class="field">
+          <div class="field-top"><label for="mens">Mensalidade da academia</label><output id="mensOut">R$ 150</output></div>
+          <input type="range" id="mens" min="60" max="400" step="10" value="150">
+        </div>
+        <div class="field">
+          <div class="field-top"><label for="ppl">Pessoas que vão usar</label><output id="pplOut">1</output></div>
+          <input type="range" id="ppl" min="1" max="5" step="1" value="1">
+        </div>
+      </div>
+      <div class="calc-r">
+        <div class="res"><span>Se paga em</span><b id="payback">8 meses</b></div>
+        <div class="res"><span>Economia em 3 anos</span><b class="o" id="save3">R$ 4.201</b></div>
+        <div class="res"><span>Parcela da bike vs. mensalidade</span><b id="vs" style="font-size:clamp(28px,2.6vw,40px)">R$ 88,81 vs R$ 150</b></div>
+        <p class="calc-note">Cálculo estimado com base no valor de R$ 1.199 no Pix. Sem contar transporte, estacionamento e tempo de deslocamento.</p>
+        <a href="#oferta" class="btn magnetic">Quero economizar
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECS -->
+<section class="specs" id="especificacoes">
+  <div class="wrap specs-grid">
+    <div class="specs-img rv"><img src="assets/bike-frente.webp" alt="Smart Bike Magnetic 6K" loading="lazy" width="1108" height="1200"></div>
+    <div>
+      <span class="eyebrow rv">Ficha técnica</span>
+      <h2 class="display rv" style="font-size:clamp(44px,5vw,80px);margin:16px 0 30px">Os números <span class="o">sem rodeio.</span></h2>
+      <div class="spec-table">
+        <div class="spec-row rv"><span>Disco de inércia</span><b>6 kg (≈ 12 a 14 kg mecânico)</b></div>
+        <div class="spec-row rv"><span>Resistência</span><b>Magnética, ajuste manual, sem contato físico</b></div>
+        <div class="spec-row rv"><span>Transmissão</span><b>Correia</b></div>
+        <div class="spec-row rv"><span>Peso máximo do usuário</span><b>160 kg</b></div>
+        <div class="spec-row rv"><span>Altura do usuário</span><b>1,20 m a 1,95 m</b></div>
+        <div class="spec-row rv"><span>Altura do assento</span><b>82 a 102 cm</b></div>
+        <div class="spec-row rv"><span>Altura do guidão</span><b>115 a 120 cm</b></div>
+        <div class="spec-row rv"><span>Monitor</span><b>Tempo, velocidade, distância, calorias, odômetro e pulso · pilhas AAA</b></div>
+        <div class="spec-row rv"><span>Conectividade</span><b>Bluetooth · Zwift, MyWhoosh, Kinomap</b></div>
+        <div class="spec-row rv"><span>Pedais</span><b>Alumínio com correia firma-pé</b></div>
+        <div class="spec-row rv"><span>Peso do equipamento</span><b>25 kg (aproximado)</b></div>
+        <div class="spec-row rv"><span>Dimensões (C × L)</span><b>100 × 58 cm</b></div>
+        <div class="spec-row rv"><span>Estrutura</span><b>Aço reforçado</b></div>
+        <div class="spec-row rv"><span>Extras</span><b>Suporte p/ halteres, 2 garrafas e celular ou tablet · rodízios · pés estabilizadores · ferramentas</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICE DROP -->
+<section class="pdrive" aria-label="De R$ 2.431,72 por R$ 1.199 no Pix, 50% OFF por tempo limitado">
+  <div class="pd-wipe" aria-hidden="true"></div>
+  <div class="pd-stage">
+    <div class="pd-old" aria-hidden="true"><small>Preço normal</small><div class="pd-old-n"><span>R$</span><span>&nbsp;</span><span>2</span><span>.</span><span>4</span><span>3</span><span>1</span><i class="pd-strike"></i></div></div>
+    <div class="pd-final">
+      <small class="pd-k">Preço de lançamento no Pix</small>
+      <b class="pd-new"><span>R$</span> <span>1</span><span>.</span><span>1</span><span>9</span><span>9</span></b>
+      <p class="pd-sub">ou R$ 1.332,22 em 15x de R$ 88,81 sem juros · frete grátis para 18 estados*</p>
+      <div class="pd-urg" data-tm>
+        <b class="pd-ltd">Oferta por tempo limitado</b>
+        <span class="pd-tlabel">Esta condição termina em</span>
+        <div class="pd-timer" role="timer"><div><b data-u="d">0</b><small>dias</small></div><i>:</i><div><b data-u="h">00</b><small>h</small></div><i>:</i><div><b data-u="m">00</b><small>min</small></div><i>:</i><div><b data-u="s">00</b><small>seg</small></div></div>
+        <span class="pd-limit"><i></i>R$ 400 de desconto extra já aplicado no preço</span>
+      </div>
+      <a href="https://megagym.com.br/cart/52058394329362:1" class="btn pd-cta">Garantir a minha agora
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="pd-stamp" aria-hidden="true">50%<small>OFF</small></div>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section class="offer" id="oferta">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow rv">Oferta especial de lançamento</span>
+      <h2 class="display rv">Garanta a sua <span class="o">Smart 6K.</span></h2>
+      <p class="lead rv">R$ 400 de desconto extra já aplicado, frete grátis para 18 estados* e 1 ano de garantia estendida. O preço de lançamento não fica para sempre.</p>
+    </div>
+
+    <div class="offer-grid">
+      <div class="card main rv">
+        <span class="card-flag">Oferta de lançamento</span>
+        <div class="card-img"><img src="assets/bike-lado.webp" alt="Smart Bike Magnetic 6K" loading="lazy" width="1036" height="1152"><div class="fg-badge fg-card" role="img" aria-label="Frete grátis para 18 estados"><svg class="fg-ring" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="fgp-fg-card" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs><text><textPath href="#fgp-fg-card" textLength="474">FRETE GRÁTIS • 18 ESTADOS • FRETE GRÁTIS • 18 ESTADOS •</textPath></text></svg><div class="fg-core" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><b>GRÁTIS</b></div></div></div>
+        <div>
+          <h3>Smart Bike Magnetic 6K</h3>
+          <div class="from">De <s>R$ 2.431,72</s> por</div>
+          <div class="big"><small>R$</small>1.199<small>,00</small></div>
+          <span class="pix">◆ no Pix, com 10% off · 50% OFF</span>
+          <div class="inst" style="margin-top:10px">ou R$ 1.332,22 em <b>15x de R$ 88,81</b> sem juros</div>
+          <div class="card-cd" data-tm>Oferta por tempo limitado. Termina em <span class="tmr"><b data-u="d">0</b><small>d</small><b data-u="h">00</b>:<b data-u="m">00</b>:<b data-u="s">00</b></span></div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"/></svg><b>Frete grátis para 18 estados*</b></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"/></svg>1 ano de garantia estendida</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"/></svg>Enviada pré-montada + ferramentas</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"/></svg>Suporte para halteres, garrafas e tablet</li>
+          </ul>
+          <a class="btn btn-block magnetic" href="https://megagym.com.br/cart/52058394329362:1" data-buy>Comprar agora
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <div class="stock"><i></i>Em estoque</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ship rv">
+      <div class="ship-l">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>
+        <div><b>Frete grátis</b><span>Para 18 estados. Confira o prazo e o valor para o seu CEP</span></div>
+      </div>
+      <div class="ship-r">
+        <a class="btn btn-ghost" href="https://megagym.com.br/products/bicicleta-ergometrica-smart-magnetic-6k-disco-6kg-resistencia-magnetica" target="_blank" rel="noopener">Calcular frete e prazo</a>
+      </div>
+    </div>
+
+    <div class="guar">
+      <div class="g rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><div><b>1 ano de garantia</b><span>Garantia estendida na oferta de lançamento</span></div></div>
+      <div class="g rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 8l-9-5-9 5 9 5 9-5zM3 8v8l9 5 9-5V8"/></svg><div><b>Chega pré-montada</b><span>Acompanha as ferramentas de montagem</span></div></div>
+      <div class="g rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg><div><b>Compra segura</b><span>Finalize no checkout oficial da MegaGym</span></div></div>
+      <div class="g rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg><div><b>Até 21x no cartão</b><span>15x sem juros · 10% off no Pix</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap faq-grid">
+    <div>
+      <span class="eyebrow rv">Dúvidas</span>
+      <h2 class="display rv">Tudo que você <span class="o">precisa saber.</span></h2>
+    </div>
+    <div>
+      <div class="qa open"><button type="button" aria-expanded="true">O frete é grátis mesmo?<i></i></button><div class="qa-body"><div><p>Sim, para 18 estados. Para confirmar se o seu está entre eles e ver o prazo, calcule o frete com o seu CEP na página do produto ou no checkout.</p></div></div></div>
+      <div class="qa"><button type="button" aria-expanded="false">Preciso montar? É difícil?<i></i></button><div class="qa-body"><div><p>Ela chega pré-montada e acompanha as ferramentas. A montagem final é simples e rápida.</p></div></div></div>
+      <div class="qa"><button type="button" aria-expanded="false">Faz barulho? Dá para usar em apartamento?<i></i></button><div class="qa-body"><div><p>A resistência é magnética, sem contato físico com o disco, e a transmissão é por correia. Por isso ela é praticamente silenciosa, ideal para apartamento e para treinar cedo ou tarde da noite.</p></div></div></div>
+      <div class="qa"><button type="button" aria-expanded="false">Funciona com Zwift e MyWhoosh?<i></i></button><div class="qa-body"><div><p>Sim. A conexão é via Bluetooth com celular ou tablet, e funciona com Zwift, MyWhoosh e Kinomap. Os apps são de terceiros e podem exigir assinatura própria. O ajuste de carga é manual: a resistência não muda sozinha conforme o percurso.</p></div></div></div>
+      <div class="qa"><button type="button" aria-expanded="false">Precisa de tomada?<i></i></button><div class="qa-body"><div><p>Não. O monitor funciona com pilhas AAA (ou similares), então você coloca a bike onde quiser.</p></div></div></div>
+      <div class="qa"><button type="button" aria-expanded="false">Serve para a minha altura e peso?<i></i></button><div class="qa-body"><div><p>Ela foi projetada para pessoas de 1,20 m a 1,95 m e suporta até 160 kg, com ajuste de altura no banco e no guidão.</p></div></div></div>
+      <div class="qa"><button type="button" aria-expanded="false">Qual a diferença para a Smart 13K?<i></i></button><div class="qa-body"><div><p>A 6K tem disco de 6 kg (equivalente a 12 a 14 kg de uma bike mecânica) e suporta até 160 kg. A 13K tem disco de 13 kg, para quem quer uma pedalada ainda mais pesada. Para a maioria dos treinos em casa, a 6K entrega o que você precisa por um preço bem menor.</p></div></div></div>
+      <div class="qa"><button type="button" aria-expanded="false">Quais as formas de pagamento?<i></i></button><div class="qa-body"><div><p>Cartão em até 15x sem juros de R$ 88,81 (ou em até 21x, consulte as condições no checkout) e Pix com 10% de desconto: R$ 1.199,00.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final">
+  <div class="final-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <img class="final-bike rv" src="assets/bike-halteres.webp" alt="" aria-hidden="true" loading="lazy" width="1176" height="1466">
+    <h2 class="display rv">Menos desculpa.<br><span class="o">Mais pedal.</span></h2>
+    <p class="lead rv">Garanta a sua Smart Bike Magnetic 6K por R$ 1.199 no Pix, com frete grátis para 18 estados* e 1 ano de garantia estendida.</p>
+    <p class="final-tm rv" data-tm>Oferta de lançamento termina em <span class="tmr"><b data-u="d">0</b><small>d</small><b data-u="h">00</b>:<b data-u="m">00</b>:<b data-u="s">00</b></span></p>
+    <a href="https://megagym.com.br/cart/52058394329362:1" class="btn magnetic rv">Garantir a minha por R$ 1.199
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-in">
+    <img src="assets/logo.png" alt="MegaGym" width="800" height="206">
+    <p>*Frete grátis para 18 estados. Confirme a disponibilidade e o prazo para o seu CEP no cálculo de frete. Preços e condições sujeitos a alteração sem aviso prévio.</p>
+    <p>© MegaGym Equipamentos</p>
+  </div>
+</footer>
+
+<div class="sticky-cta" id="stickyCta">
+  <div class="p"><b>R$ 1.199</b><span>no Pix · 15x R$ 88,81<span data-tm> · termina em <span class="tmr"><b data-u="d">0</b><small>d</small><b data-u="h">00</b>:<b data-u="m">00</b></span></span></span></div>
+  <a href="https://megagym.com.br/cart/52058394329362:1" class="btn">Comprar</a>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(function(){
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hasGsap = typeof gsap !== 'undefined';
+  const $ = (s,c=document)=>c.querySelector(s);
+  const $$ = (s,c=document)=>Array.from(c.querySelectorAll(s));
+
+  /* ---------- non-animation interactivity (always works) ---------- */
+  // FAQ
+  $$('.qa button').forEach(b=>b.addEventListener('click',()=>{
+    const qa=b.parentElement, open=!qa.classList.contains('open');
+    $$('.qa').forEach(q=>{q.classList.remove('open');q.querySelector('button').setAttribute('aria-expanded','false')});
+    if(open){qa.classList.add('open');b.setAttribute('aria-expanded','true')}
+  }));
+  /* ---------- CONFIGURAÇÃO DA OFERTA (edite aqui) ---------- */
+  // Fim real da oferta. Quando a data passa, os contadores somem sozinhos.
+  const OFERTA_FIM = new Date('2026-11-27T23:59:59-03:00');
+  const PRECO_PIX = 1199, PARCELA = '88,81';
+  function tickTimer(){
+    const left=OFERTA_FIM-Date.now();
+    if(left<=0){ $$('[data-tm]').forEach(e=>{e.style.display='none'}); clearInterval(timerId); return }
+    const p=n=>String(n).padStart(2,'0');
+    const v={d:String(Math.floor(left/864e5)),h:p(Math.floor(left%864e5/36e5)),m:p(Math.floor(left%36e5/6e4)),s:p(Math.floor(left%6e4/1e3))};
+    $$('[data-u]').forEach(b=>{ if(b.textContent!==v[b.dataset.u]) b.textContent=v[b.dataset.u]; });
+  }
+  const timerId=setInterval(tickTimer,250); tickTimer();
+  // Calculator
+  const fmt=n=>'R$ '+Math.round(n).toLocaleString('pt-BR');
+  const mens=$('#mens'),ppl=$('#ppl');
+  function calc(){
+    const m=+mens.value,p=+ppl.value,total=m*p;
+    $('#mensOut').textContent=fmt(m);$('#pplOut').textContent=p;
+    [mens,ppl].forEach(i=>i.style.setProperty('--p',((i.value-i.min)/(i.max-i.min)*100)+'%'));
+    const months=Math.ceil(PRECO_PIX/total);
+    $('#payback').textContent=months+(months===1?' mês':' meses');
+    const s=total*36-PRECO_PIX;
+    $('#save3').textContent=s>0?fmt(s):'R$ 0';
+    $('#vs').textContent='R$ '+PARCELA+' vs '+fmt(total)+'/mês';
+  }
+  mens.addEventListener('input',calc);ppl.addEventListener('input',calc);calc();
+  // Header + sticky CTA
+  const header=$('.header'),sticky=$('#stickyCta'),hero=$('.hero'),offer=$('#oferta');
+  function onScroll(){
+    const y=window.scrollY;
+    header.classList.toggle('scrolled',y>20);
+    const pastHero=y>hero.offsetTop+hero.offsetHeight*.7;
+    const r=offer.getBoundingClientRect();
+    const inOffer=r.top<window.innerHeight*.6&&r.bottom>0;
+    sticky.classList.toggle('show',pastHero&&!inOffer);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  const loader=$('.loader');
+  if(!hasGsap||reduce){
+    loader.remove();
+    $$('.rv,.h-fade').forEach(e=>{e.style.opacity=1;e.style.transform='none'});
+    $$('.count').forEach(c=>c.textContent=c.dataset.to);
+    $$('.bar-fill').forEach(b=>b.style.width=b.dataset.w+'%');
+    $$('.life-item').forEach(l=>l.style.clipPath='none');
+    const ig=$('.ignite'); if(ig) ig.remove();
+    const pd=$('.pdrive'); if(pd) pd.remove();
+    if(!hasGsap) return;
+  }
+  if(reduce) return;
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* ---------- smooth scroll ---------- */
+  let lenis=null;
+  if(typeof Lenis!=='undefined'){
+    lenis=new Lenis({duration:1.15,smoothWheel:true});
+    lenis.on('scroll',ScrollTrigger.update);
+    gsap.ticker.add(t=>lenis.raf(t*1000));
+    gsap.ticker.lagSmoothing(0);
+    $$('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
+      const t=$(a.getAttribute('href'));if(!t)return;e.preventDefault();lenis.scrollTo(t,{offset:-80});
+    }));
+  }
+
+  /* ---------- preloader + hero intro ---------- */
+  gsap.set('.h-fade',{opacity:0,y:30});
+  gsap.set('.hero h1 .line>span',{yPercent:110});
+  gsap.set('.hero-bike',{opacity:0,scale:.82,y:60,filter:'blur(18px) drop-shadow(0 50px 60px rgba(0,0,0,.75))'});
+  gsap.set('.ring',{opacity:0,scale:.6});
+  gsap.set('.chip',{opacity:0,scale:.6});
+  const num=$('.loader-num'),cnt={v:0};
+  const tl=gsap.timeline();
+  tl.to('.loader img',{opacity:1,y:0,duration:.6,ease:'power3.out'})
+    .to('.loader-bar i',{width:'100%',duration:1.1,ease:'power2.inOut'},'<.1')
+    .to(cnt,{v:100,duration:1.1,ease:'power2.inOut',onUpdate:()=>num.textContent=String(Math.round(cnt.v)).padStart(3,'0')},'<')
+    .to('.loader',{clipPath:'inset(0 0 100% 0)',duration:.9,ease:'expo.inOut'})
+    .set('.loader',{display:'none'})
+    .to('.hero h1 .line>span',{yPercent:0,duration:1.1,stagger:.08,ease:'expo.out'},'-=.45')
+    .to('.ring',{opacity:1,scale:1,duration:1.4,ease:'expo.out'},'<')
+    .to('.hero-bike',{opacity:1,scale:1,y:0,filter:'blur(0px) drop-shadow(0 50px 60px rgba(0,0,0,.75))',duration:1.4,ease:'expo.out'},'<.1')
+    .to('.h-fade',{opacity:1,y:0,duration:.9,stagger:.08,ease:'power3.out'},'<.2')
+    .to('.chip',{opacity:1,scale:1,duration:.8,stagger:.1,ease:'back.out(2)'},'<.3')
+    .add(()=>{ $$('.chip').forEach((c,i)=>gsap.to(c,{y:i%2?-12:12,duration:2.4+i*.3,yoyo:true,repeat:-1,ease:'sine.inOut'})) });
+
+  /* ---------- ring spin linked to scroll velocity ---------- */
+  const spin=gsap.to('.ring-spin',{rotation:360,svgOrigin:'200 200',duration:14,repeat:-1,ease:'none'});
+  const spinR=gsap.to('.ring-spin-r',{rotation:-360,svgOrigin:'200 200',duration:22,repeat:-1,ease:'none'});
+
+  /* ---------- hero parallax on scroll + mouse tilt ---------- */
+  gsap.to('.hero-bike',{yPercent:-12,scale:1.06,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+  gsap.to('.hero-copy',{yPercent:-10,opacity:.2,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+  const hv=$('.hero-visual'),bike=$('.hero-bike');
+  if(window.matchMedia('(hover:hover)').matches){
+    const rx=gsap.quickTo(bike,'rotationY',{duration:.8,ease:'power3'}),ry=gsap.quickTo(bike,'rotationX',{duration:.8,ease:'power3'});
+    hv.addEventListener('mousemove',e=>{const r=hv.getBoundingClientRect();rx(((e.clientX-r.left)/r.width-.5)*16);ry(-((e.clientY-r.top)/r.height-.5)*10)});
+    hv.addEventListener('mouseleave',()=>{rx(0);ry(0)});
+    // cursor glow
+    const g=$('.cursor-glow'),gx=gsap.quickTo(g,'x',{duration:.6,ease:'power3'}),gy=gsap.quickTo(g,'y',{duration:.6,ease:'power3'});
+    window.addEventListener('mousemove',e=>{gx(e.clientX);gy(e.clientY)});
+    // magnetic buttons
+    $$('.magnetic').forEach(b=>{
+      const mx=gsap.quickTo(b,'x',{duration:.5,ease:'power3'}),my=gsap.quickTo(b,'y',{duration:.5,ease:'power3'});
+      b.addEventListener('mousemove',e=>{const r=b.getBoundingClientRect();mx((e.clientX-r.left-r.width/2)*.25);my((e.clientY-r.top-r.height/2)*.35)});
+      b.addEventListener('mouseleave',()=>{mx(0);my(0)});
+    });
+  }
+
+  /* ---------- giant marquee driven by scroll velocity ---------- */
+  const track=$('.giant-track');
+  let gx=0,dir=1,boost=0;
+  const half=()=>track.scrollWidth/2;
+  ScrollTrigger.create({onUpdate:self=>{dir=self.direction;boost=Math.min(Math.abs(self.getVelocity())/120,30)}});
+  gsap.ticker.add(()=>{
+    gx-=(1.2+boost)*dir; boost*=.92;
+    const h=half(); if(gx<=-h)gx+=h; if(gx>0)gx-=h;
+    track.style.transform='translate3d('+gx+'px,0,0)';
+    spin.timeScale(1+boost*.6);spinR.timeScale(1+boost*.6);
+  });
+
+  /* ---------- scroll progress ---------- */
+  const prog=document.createElement('div');prog.className='progress';document.body.appendChild(prog);
+  gsap.to(prog,{scaleX:1,ease:'none',scrollTrigger:{start:0,end:'max',scrub:.3}});
+
+  /* ---------- heading word-mask reveal ---------- */
+  function splitWords(el){
+    [...el.childNodes].forEach(n=>{
+      if(n.nodeType===3){
+        const frag=document.createDocumentFragment();
+        n.textContent.split(/(\s+)/).forEach(t=>{
+          if(!t)return;
+          if(/^\s+$/.test(t)){frag.appendChild(document.createTextNode(' '));return}
+          const w=document.createElement('span');w.className='wd';const i=document.createElement('i');i.textContent=t;w.appendChild(i);frag.appendChild(w);
+        });
+        n.replaceWith(frag);
+      }else if(n.nodeType===1&&n.tagName!=='BR'){splitWords(n)}
+    });
+  }
+  $$('main h2.display').forEach(h=>{
+    h.classList.remove('rv');gsap.set(h,{opacity:1,y:0});
+    splitWords(h);
+    gsap.fromTo(h.querySelectorAll('.wd>i'),{yPercent:115,rotate:4},{yPercent:0,rotate:0,duration:1.1,stagger:.06,ease:'expo.out',scrollTrigger:{trigger:h,start:'top 86%'}});
+  });
+
+  /* ---------- section-to-section transitions ---------- */
+  const sxSel=['.pain','.features','.compare','.audience','.life','.calc','.specs','.offer','.faq','.final'];
+  const sxNames={'.pain':'A verdade','.features':'Tecnologia','.compare':'Magnética','.audience':'Para quem','.life':'Estilo de vida','.calc':'Economia','.specs':'Ficha técnica','.offer':'Oferta','.faq':'Dúvidas','.final':'Agora'};
+  sxSel.forEach((sel,idx)=>{
+    const sec=$(sel);if(!sec)return;
+    sec.classList.add('sx');
+    const shade=document.createElement('div');shade.className='sx-shade';sec.appendChild(shade);
+    const line=document.createElement('div');line.className='sx-line';sec.appendChild(line);
+    const tag=document.createElement('div');tag.className='sx-tag';tag.innerHTML='<b>'+String(idx+1).padStart(2,'0')+'</b> / '+sxNames[sel].toUpperCase();sec.appendChild(tag);
+    // entrance: rounded clip opens up like a curtain
+    gsap.fromTo(sec,{clipPath:'inset(5% 3.5% 0% 3.5% round 56px)'},{clipPath:'inset(0% 0% 0% 0% round 0px)',ease:'none',
+      scrollTrigger:{trigger:sec,start:'top bottom',end:'top 25%',scrub:true}});
+    gsap.fromTo(line,{scaleX:0},{scaleX:1,ease:'none',scrollTrigger:{trigger:sec,start:'top 90%',end:'top 40%',scrub:true}});
+    gsap.fromTo(tag,{opacity:0,x:30},{opacity:1,x:0,duration:1,ease:'expo.out',scrollTrigger:{trigger:sec,start:'top 70%'}});
+    // exit: section dims as the next one takes over
+    gsap.fromTo(shade,{opacity:0},{opacity:.55,ease:'none',scrollTrigger:{trigger:sec,start:'bottom 70%',end:'bottom top',scrub:true}});
+  });
+  // world section: zoom-in entrance
+  gsap.fromTo('.world',{clipPath:'inset(8% 6% 0% 6% round 64px)'},{clipPath:'inset(0% 0% 0% 0% round 0px)',ease:'none',scrollTrigger:{trigger:'.world',start:'top bottom',end:'top top',scrub:true}});
+
+  /* ---------- anchor navigation: orange shutter wipe ---------- */
+  const wipe=document.createElement('div');wipe.className='wipe';wipe.innerHTML='<i></i><i></i><i></i><i></i><i></i>';document.body.appendChild(wipe);
+  $$('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
+    const t=$(a.getAttribute('href'));if(!t||!lenis)return;e.preventDefault();e.stopImmediatePropagation();
+    const bars=wipe.children;
+    gsap.timeline()
+      .set(bars,{transformOrigin:'50% 100%'})
+      .to(bars,{scaleY:1,duration:.45,stagger:.05,ease:'expo.in'})
+      .add(()=>lenis.scrollTo(t,{offset:-80,immediate:true,force:true}))
+      .set(bars,{transformOrigin:'50% 0%'})
+      .to(bars,{scaleY:0,duration:.6,stagger:.05,ease:'expo.out'},'+=.05');
+  },true));
+
+  /* ---------- IGNITION: pinned cinematic dive into the flywheel (leads into Tecnologia) ---------- */
+  (function(){
+    const sec=$('.ignite');if(!sec)return;
+    const lines=$('.ig-lines',sec),N=28;
+    for(let i=0;i<N;i++){const l=document.createElement('i');l.style.transform='rotate('+(i*360/N)+'deg)';lines.appendChild(l)}
+    const L=lines.children;
+    const rings=['.ig-r1','.ig-r2','.ig-r3','.ig-r4'].map(s=>$(s,sec));
+    const r1=rings[0],len=2*Math.PI*280;
+    gsap.set(r1,{strokeDasharray:len,strokeDashoffset:len});
+    gsap.set('.ig-r2,.ig-r3,.ig-r4',{scale:.6,opacity:0});
+    gsap.set('.ig-bike',{scale:.35,opacity:0,y:60,filter:'blur(14px) drop-shadow(0 40px 60px rgba(0,0,0,.9))'});
+    gsap.set(L,{scaleY:0,opacity:0});
+    gsap.set('.ig-big span',{yPercent:120,opacity:0,scale:2.4,rotate:-8});
+    gsap.set('.ig-final small,.ig-final p,.ig-down',{opacity:0,y:30});
+
+    const tl=gsap.timeline({defaults:{ease:'none'},scrollTrigger:{trigger:sec,start:'top top',end:'+=320%',pin:true,scrub:1,anticipatePin:1,refreshPriority:1}});
+    tl
+      // 1. arrival: word + bike materialise, outer ring draws itself
+      .to('.ig-bike',{scale:1,opacity:1,y:0,filter:'blur(0px) drop-shadow(0 40px 60px rgba(0,0,0,.9))',duration:1.2,ease:'power3.out'},0.1)
+      .to(r1,{strokeDashoffset:0,duration:1.2,ease:'power2.inOut'},0.2)
+      .to('.ig-r2,.ig-r3,.ig-r4',{scale:1,opacity:1,stagger:.12,duration:.9,ease:'back.out(1.6)'},0.4)
+      .to('.ig-glow',{opacity:1,duration:1},0.5)
+      .to('.ig-cap span',{opacity:1,stagger:.15,duration:.4},0.8)
+      // 2. spin-up: rings accelerate, warp lines blast outward, bike vibrates
+      .to('.ig-r1',{rotate:540,duration:2.2,ease:'power2.in'},1.4)
+      .to('.ig-r2',{rotate:-720,duration:2.2,ease:'power2.in'},1.4)
+      .to('.ig-r3',{rotate:1080,duration:2.2,ease:'power2.in'},1.4)
+      .to('.ig-r4',{rotate:-360,scale:1.08,duration:2.2,ease:'power2.in'},1.4)
+      .to(L,{scaleY:1,opacity:1,stagger:{each:.03,from:'random'},duration:.8,ease:'power2.out'},1.6)
+      .to(L,{y:'18vmax',duration:1.6,ease:'power2.in'},2.0)
+      .to('.ig-cap',{opacity:0,y:20,duration:.5},2.2)
+      .to('.ig-bike',{keyframes:{x:[0,-4,5,-3,4,-2,0],y:[0,3,-4,2,-3,1,0]},duration:1,ease:'none'},2.0)
+      .to('.ig-glow',{scale:1.8,duration:1.2},2.2)
+      // 3. dive: camera crashes into the flywheel, flash, orange floods out of the wheel
+      .set('.ig-bike',{filter:'none'},2.95)
+      .to('.ig-bike',{scale:5.5,transformOrigin:'64% 66%',duration:1.3,ease:'power3.in'},3.0)
+      .fromTo('.ig-bike,.ig-rings,.ig-lines,.ig-glow',{visibility:'visible'},{visibility:'hidden',duration:.01,immediateRender:false},4.9)
+      .to('.ig-rings',{scale:3,opacity:0,duration:1.2,ease:'power3.in'},3.0)
+      .to(L,{opacity:0,duration:.6},3.4)
+      .to('.ig-flash',{opacity:1,duration:.15},4.05)
+      .to('.ig-flash',{opacity:0,duration:.4},4.2)
+      .to('.ig-flood',{clipPath:'circle(150% at 59% 58%)',duration:1.1,ease:'power3.inOut'},3.9)
+      // 4. slam: the headline punches in letter by letter
+      .to('.ig-big span',{yPercent:0,opacity:1,scale:1,rotate:0,stagger:.08,duration:.7,ease:'back.out(2.2)'},4.8)
+      .to('.ig-final small',{opacity:1,y:0,duration:.5},5.0)
+      .to('.ig-final p',{opacity:1,y:0,duration:.5},5.3)
+      .to('.ig-down',{opacity:1,y:0,duration:.4},5.6)
+      .to('.ig-big',{scale:1.04,duration:.8},5.8);
+  })();
+
+  /* ---------- PRICE DROP ---------- */
+  (function(){
+    const sec=$('.pdrive');if(!sec)return;
+    const digits=$$('.pd-old-n span',sec);
+    gsap.set('.pd-old',{opacity:0,scale:.85});
+    gsap.set('.pd-new span',{yPercent:120,opacity:0,scale:2.2,rotate:-8});
+    gsap.set('.pd-k,.pd-sub,.pd-cta',{opacity:0,y:30});
+    gsap.set('.pd-urg',{opacity:0,y:40,scale:.9});
+    gsap.set('.pd-stamp',{scale:0,rotate:-220,opacity:0});
+    const tl=gsap.timeline({defaults:{ease:'none'},scrollTrigger:{trigger:sec,start:'top top',end:'+=220%',pin:true,scrub:1,anticipatePin:1,refreshPriority:1}});
+    tl
+      .to('.pd-old',{opacity:1,scale:1,duration:.6,ease:'power3.out'},0)
+      .to('.pd-strike',{scaleX:1,duration:.45,ease:'power2.inOut'},.6)
+      .to(digits,{y:()=>gsap.utils.random(320,620),x:()=>gsap.utils.random(-80,80),rotate:()=>gsap.utils.random(-100,100),opacity:0,stagger:{each:.06,from:'random'},duration:.9,ease:'power2.in'},1.0)
+      .to('.pd-old small,.pd-strike',{opacity:0,duration:.3},1.2)
+      .to('.pd-wipe',{scaleX:1,duration:.7,ease:'expo.inOut'},1.5)
+      .set('.pd-old',{visibility:'hidden'},2.2)
+      .to('.pd-k',{opacity:1,y:0,duration:.4},1.9)
+      .to('.pd-new span',{yPercent:0,opacity:1,scale:1,rotate:0,stagger:.07,duration:.6,ease:'back.out(2.2)'},2.0)
+      .to('.pd-stamp',{scale:1,rotate:-12,opacity:1,duration:.6,ease:'back.out(2.5)'},2.4)
+      .to('.pd-sub',{opacity:1,y:0,duration:.4},2.5)
+      .to('.pd-urg',{opacity:1,y:0,scale:1,duration:.6,ease:'back.out(1.8)'},2.7)
+      .to('.pd-cta',{opacity:1,y:0,duration:.4},3.0)
+      .to('.pd-stamp',{rotate:-4,duration:.5},3.2);
+  })();
+
+  /* ---------- generic reveals ---------- */
+  $$('.rv').forEach(el=>{
+    gsap.to(el,{opacity:1,y:0,duration:1.1,ease:'expo.out',scrollTrigger:{trigger:el,start:'top 88%'}});
+  });
+  ScrollTrigger.batch('.excuse',{start:'top 90%',onEnter:b=>gsap.fromTo(b,{x:-40,opacity:0},{x:0,opacity:1,stagger:.1,duration:.9,ease:'expo.out',overwrite:true})});
+  ScrollTrigger.batch('.aud',{start:'top 90%',onEnter:b=>gsap.fromTo(b,{y:60,opacity:0,rotate:2},{y:0,opacity:1,rotate:0,stagger:.1,duration:1,ease:'expo.out',overwrite:true})});
+  // strike-through excuses as they scroll by
+  $$('.excuse s').forEach(s=>{
+    s.style.textDecorationColor='transparent';
+    ScrollTrigger.create({trigger:s,start:'top 70%',onEnter:()=>{s.style.transition='text-decoration-color .6s, color .6s';s.style.textDecorationColor='var(--orange)'}});
+  });
+
+  /* ---------- counters ---------- */
+  $$('.count').forEach(c=>{
+    const to=+c.dataset.to,o={v:to===0?99:0};
+    ScrollTrigger.create({trigger:c,start:'top 85%',once:true,onEnter:()=>gsap.to(o,{v:to,duration:2,ease:'power3.out',onUpdate:()=>c.textContent=Math.round(o.v)})});
+  });
+
+  /* ---------- parallax images ---------- */
+  $$('.parallax').forEach(img=>gsap.fromTo(img,{yPercent:-8},{yPercent:8,ease:'none',scrollTrigger:{trigger:img.parentElement,start:'top bottom',end:'bottom top',scrub:true}}));
+
+  /* ---------- features sticky switcher ---------- */
+  const feats=$$('.feat'),fimgs=$$('.feat-frame img'),fbars=$$('.feat-progress i');
+  feats.forEach((f,i)=>ScrollTrigger.create({trigger:f,start:'top 55%',end:'bottom 55%',onToggle:s=>{
+    if(!s.isActive)return;
+    feats.forEach(x=>x.classList.remove('on'));f.classList.add('on');
+    fimgs.forEach((im,k)=>im.classList.toggle('on',k===i));
+    fbars.forEach((b,k)=>b.classList.toggle('on',k<=i));
+  }}));
+
+  /* ---------- horizontal world (desktop pin) ---------- */
+  const mm=gsap.matchMedia();
+  mm.add('(min-width: 901px)',()=>{
+    const wt=$('.world-track');
+    const dist=()=>Math.max(0,wt.scrollWidth-window.innerWidth);
+    const tw=gsap.to(wt,{x:()=>-dist(),ease:'none',scrollTrigger:{trigger:'.world-pin',start:'top top',end:()=>'+='+dist(),pin:true,scrub:1,invalidateOnRefresh:true,refreshPriority:1}});
+    $$('.w-card img').forEach(img=>gsap.fromTo(img,{scale:1.25},{scale:1,ease:'none',scrollTrigger:{trigger:img,containerAnimation:tw,start:'left right',end:'center center',scrub:true}}));
+  });
+
+  /* ---------- bars ---------- */
+  ScrollTrigger.create({trigger:'.bars',start:'top 75%',once:true,onEnter:()=>{
+    $$('.bar-fill').forEach((b,i)=>gsap.to(b,{width:b.dataset.w+'%',duration:1.5,delay:i*.15,ease:'expo.out'}));
+  }});
+  gsap.from('.eq-box.hot',{scale:.6,ease:'back.out(2)',duration:1,scrollTrigger:{trigger:'.equation',start:'top 85%'}});
+
+  /* ---------- lifestyle clip reveals ---------- */
+  $$('.life-item').forEach(it=>{
+    gsap.to(it,{clipPath:'inset(0% 0% 0% 0% round 24px)',ease:'none',scrollTrigger:{trigger:it,start:'top 95%',end:'top 35%',scrub:true}});
+    gsap.to(it.querySelector('img'),{scale:1,ease:'none',scrollTrigger:{trigger:it,start:'top bottom',end:'bottom top',scrub:true}});
+  });
+
+  /* ---------- offer card glow ---------- */
+  gsap.fromTo('.card.main',{boxShadow:'0 30px 120px -40px rgba(252,84,0,0)'},{boxShadow:'0 30px 120px -40px rgba(252,84,0,.75)',scrollTrigger:{trigger:'.card.main',start:'top 80%',end:'top 30%',scrub:true}});
+  gsap.fromTo('.card.main .card-img img',{rotate:-6,scale:.9},{rotate:0,scale:1,ease:'none',scrollTrigger:{trigger:'.card.main',start:'top bottom',end:'center center',scrub:true}});
+
+  /* ---------- final ---------- */
+
+  ScrollTrigger.sort(); ScrollTrigger.refresh();
+  window.addEventListener('load',()=>{ScrollTrigger.sort();ScrollTrigger.refresh()});
+})();
+</script>
+</body>
+</html>
